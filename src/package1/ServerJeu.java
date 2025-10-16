@@ -20,9 +20,7 @@ public class ServerJeu extends Thread {
     private boolean finJeux = false;    // Flag indiquant si le jeu est terminé
     private String gagnant = "";        // IP du client gagnant
     
-    /**
-     * Méthode principale du thread serveur
-     */
+    /**     */
     @Override
     public void run() {
         try {
@@ -163,7 +161,7 @@ public class ServerJeu extends Thread {
                     } catch (NumberFormatException e) {
                         // ÉTAPE 9 : Gestion des erreurs de format
                         pw.println("⚠️  ERREUR : Veuillez entrer un NOMBRE valide !");
-                        System.out.println("  [Client #" + numeroClient + "] Valeur invalide : " + reponse);
+                        System.out.println("[Client #" + numeroClient + "] Valeur invalide : " + reponse);
                     }
                 }
                 
@@ -182,7 +180,7 @@ public class ServerJeu extends Thread {
                 
             } finally {
                 // Nettoyage : fermer toutes les ressources
-                System.out.println("  [Client #" + numeroClient + "] Déconnexion - Nettoyage des ressources");
+                System.out.println("[Client #" + numeroClient + "] Déconnexion - Nettoyage des ressources");
                 try {
                     if (br != null) br.close();
                     if (pw != null) pw.close();
